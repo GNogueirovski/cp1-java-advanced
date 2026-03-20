@@ -108,8 +108,8 @@ public class Funcionario {
     }
 
     public void imprimirInformacao (){
-        String mensagem = String.format("Informações do Funcionário\nID:%d\nNOME:%s\nSALÁRIO: R$%.2f\nVALOR HORA: R$%.2f" +
-                "\nHORAS Trabalhadas: %d", this.getId(), this.getNome(), this.calcularSalario(),this.getValorHoraTrabalhada(), this.getHorasTrabalhadas());
+        String mensagem = String.format("\n\nInformações do Funcionário\nNivel: Base\nID:%d\nNOME:%s\nSALÁRIO: R$%.2f\nVALOR HORA: R$%.2f" +
+                "\nHORAS TRABALHADAS: %d", getId(), getNome(), calcularSalario(),getValorHoraTrabalhada(), getHorasTrabalhadas());
         System.out.println(mensagem);
     }
 

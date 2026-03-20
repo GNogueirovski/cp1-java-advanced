@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 public class VigiaNoturno extends Funcionario {
 
     @Column(name = "adicional_noturno", precision = 10, scale = 2)
-    private double adicionalNoturno;
+    private Double adicionalNoturno;
 
     public VigiaNoturno(){}
 
@@ -16,15 +16,17 @@ public class VigiaNoturno extends Funcionario {
         this.adicionalNoturno = adicionalNoturno;
     }
 
+    @Override
     public void imprimirInformacao (){
-        String mensagem = String.format("\n\nInformações do Vigia Noturno\n%sNivel: Senior\nID:%d\nNOME:%s\nSALÁRIO: R$%.2f\nVALOR HORA: R$%.2f" +
-                "\nHORAS Trabalhadas: %d", getId(), getNome(), calcularSalario(),getValorHoraTrabalhada(), getHorasTrabalhadas());
+        String mensagem = String.format("\n\nInformações do Vigia Noturno\nNIVEL: Vigia Noturno\nID:%d\nNOME:%s\nSALÁRIO: R$%.2f\nVALOR HORA: R$%.2f" +
+                "\nHORAS TRABALHADAS: %d", getId(), getNome(), calcularSalario(),getValorHoraTrabalhada(), getHorasTrabalhadas());
         System.out.println(mensagem);
     }
 
+    @Override
     public Double calcularSalario() {
         int diasTrabalhados = getHorasTrabalhadas() / 8;
-        adicionalNoturno = 1.5 + diasTrabalhados / 100.0;
-        return getValorHoraTrabalhada() * (getHorasTrabalhadas() * adicionalNoturno);
+        double adicional = adicionalNoturno + diasTrabalhados / 100.0;
+        return getValorHoraTrabalhada() * (getHorasTrabalhadas() * adicional);
     }
 }
