@@ -27,7 +27,7 @@ public class Funcionario {
 
     public Funcionario (){}
 
-    public Funcionario(String nome, int horasTrabalhadas, double valorHoraTrabalhada) {
+    public Funcionario(String nome, Integer horasTrabalhadas, Double valorHoraTrabalhada) {
         this.nome = nome;
         this.horasTrabalhadas = horasTrabalhadas;
         this.valorHoraTrabalhada = valorHoraTrabalhada;
@@ -49,28 +49,28 @@ public class Funcionario {
         this.nome = nome;
     }
 
-    public int getHorasTrabalhadas() {
+    public Integer getHorasTrabalhadas() {
         return horasTrabalhadas;
     }
 
-    public void setHorasTrabalhadas(int horasTrabalhadas) {
+    public void setHorasTrabalhadas(Integer horasTrabalhadas) {
         this.horasTrabalhadas = horasTrabalhadas;
     }
 
-    public double getValorHoraTrabalhada() {
+    public Double getValorHoraTrabalhada() {
         return valorHoraTrabalhada;
     }
 
-    public void setValorHoraTrabalhada(double valorHoraTrabalhada) {
+    public void setValorHoraTrabalhada(Double valorHoraTrabalhada) {
         this.valorHoraTrabalhada = valorHoraTrabalhada;
     }
 
-
     public void exibirSQL(Funcionario funcionario, String operacao) {
-        Table table = funcionario.getClass().getSuperclass().getAnnotation(Table.class);
-        Field[] fields = funcionario.getClass().getSuperclass().getDeclaredFields();
+        Table table = funcionario.getClass().getAnnotation(Table.class);
+        Field[] fields = funcionario.getClass().getDeclaredFields();
 
         List<String> nomeColunas = new ArrayList<>();
+
         for (Field field : fields) {
             if (field.isAnnotationPresent(Column.class)) {
                 Column column = field.getAnnotation(Column.class);
@@ -82,7 +82,7 @@ public class Funcionario {
 
         switch (operacao.toUpperCase()) {
             case "SELECT":
-                System.out.printf("SELECT * FROM %s",table.name());
+                System.out.printf("\nSELECT * FROM %s",table.name());
                 break;
             case "INSERT":
                 System.out.printf("INSERT INTO %s (%s)  VALUES ('%s','%s', '%s', '%.2f')",
@@ -93,7 +93,7 @@ public class Funcionario {
                         funcionario.getValorHoraTrabalhada());
                 break;
             case "UPDATE":
-                System.out.printf("UPDATE %s SET (%s) = ('%s','%s','%s','%s') WHERE id_funcionario = %d",
+                System.out.printf("UPDATE %s SET (%s) = ('%s','%s','%s','%.2f') WHERE id_funcionario = %d",
                         table.name(), colunas,
                         funcionario.getId(),
                         funcionario.getNome(),
@@ -108,7 +108,7 @@ public class Funcionario {
     }
 
     public void imprimirInformacao (){
-        String mensagem = String.format("\n\nInformações do Funcionário\nNivel: Base\nID:%d\nNOME:%s\nSALÁRIO: R$%.2f\nVALOR HORA: R$%.2f" +
+        String mensagem = String.format("\nInformações do Funcionário\nID:%d\nNivel: Base\nNOME:%s\nSALÁRIO: R$%.2f\nVALOR HORA: R$%.2f" +
                 "\nHORAS TRABALHADAS: %d\n", getId(), getNome(), calcularSalario(),getValorHoraTrabalhada(), getHorasTrabalhadas());
         System.out.println(mensagem);
     }
