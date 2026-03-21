@@ -19,8 +19,10 @@ public class FuncionarioSenior extends Funcionario {
 
     @Override
     public Double calcularSalario() {
+        // A cada 15h o Func. Senior recebe um Bônus
         int bonusHoras = getHorasTrabalhadas() / 15;
-        double bonus = 3.0 + bonusHoras / 100.0;
+        // A cada 15h o Sênior recebe um Bonus de 5%
+        double bonus = (5 * bonusHoras) / 100.0;
         return getValorHoraTrabalhada() * (getHorasTrabalhadas() * bonus);
     }
 }

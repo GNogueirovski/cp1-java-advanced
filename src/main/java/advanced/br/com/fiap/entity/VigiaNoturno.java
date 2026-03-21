@@ -26,7 +26,11 @@ public class VigiaNoturno extends Funcionario {
     @Override
     public Double calcularSalario() {
         int diasTrabalhados = getHorasTrabalhadas() / 8;
-        double adicional = adicionalNoturno + diasTrabalhados / 100.0;
+        // Adicional noturno é uma porcentegem somada o que vai ganhar de acordo com bonus dias Trabalhado
+        // Adicional Noturno: 12.5%
+        // Dias Trabalhasdos: 10
+        // Total: 22.5 % de bônus.
+        double adicional = (adicionalNoturno + diasTrabalhados) / 100.0;
         return getValorHoraTrabalhada() * (getHorasTrabalhadas() * adicional);
     }
 }

@@ -3,6 +3,8 @@ package advanced.br.com.fiap.view;
 import advanced.br.com.fiap.dao.FuncionarioDAO;
 import advanced.br.com.fiap.dao.FuncionarioDAOImpl;
 import advanced.br.com.fiap.entity.Funcionario;
+import advanced.br.com.fiap.entity.FuncionarioSenior;
+import advanced.br.com.fiap.entity.VigiaNoturno;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -16,21 +18,29 @@ public class TesteDao {
 
         FuncionarioDAO dao = new FuncionarioDAOImpl(em);
 
-        Funcionario funcionario = new Funcionario("Naruto Namikaze", 500, 12.5);
+        Funcionario funcionario = new Funcionario("Naruto Namikaze", 152, 12.5);
+        FuncionarioSenior funcSenior = new FuncionarioSenior("Might Guy", 104, 35.0);
+        VigiaNoturno noturno = new VigiaNoturno("Kurt Wagner", 176, 15.0, 12.5);
 
         // Cadastra o Funcionário
         try {
+            // Está dando erro:
+//            funcionario.exibirSQL(funcionario, "INSERT");
             dao.cadastrar(funcionario);
+            dao.cadastrar(funcSenior);
+            dao.cadastrar(noturno);
             dao.commit();
             System.out.printf("Funcionário %s, cadastrado com sucesso! :)", funcionario.getNome());
+            System.out.printf("Funcionário %s, cadastrado com sucesso! :)", funcSenior.getNome());
+            System.out.printf("Funcionário %s, cadastrado com sucesso! :)", noturno.getNome());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
         // Busca o Funcionário
         try {
-            Funcionario busca = dao.buscarPorId(2);
-            busca.imprimirInformacao();
+            Funcionario buscaFunc = dao.buscarPorId(funcionario.getId());
+            buscaFunc.imprimirInformacao();
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
