@@ -92,6 +92,13 @@ Para executar o projeto, certifique-se de configurar as credenciais do seu banco
 <br>
 
 
+## Diagrama de Classes
+
+---
+
+<img src="./prints/CP01-Diagrama-de-Classes.jpg" alt="CP01-Diagrama-de-Classes"/><br/>
+
+
 ## 🎓 Demonstração
 
 ---
