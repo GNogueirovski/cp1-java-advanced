@@ -39,6 +39,8 @@ public class TesteDao {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+
+        // Seleciona Funcionário
         try {
             Funcionario funcionarioEncontrado = dao.buscarPorId(funcionario.getId());
             funcionarioEncontrado.exibirSQL(funcionarioEncontrado, "SELECT");
@@ -46,6 +48,8 @@ public class TesteDao {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+
+        // Atualiza Vigia Noturno, que herda de Funcionário
         try {
             noturno.imprimirInformacao();
             noturno.setNome("Marcelo Vagner");
@@ -57,7 +61,7 @@ public class TesteDao {
             System.out.println(e.getMessage());
         }
 
-        // Remover Funcionário
+        // Remove Funcionário
         try {
             dao.remover(funcSenior.getId());
             dao.commit();
