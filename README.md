@@ -56,6 +56,25 @@ A organização dos pacotes segue as melhores práticas de separação de respon
 <br>
 
 
+## 🛠️ Como Executar
+
+---
+
+1. Clone o repositório:
+
+```Bash
+git clone https://github.com/GNogueirovski/cp1-java-advanced.git
+```
+
+2. Importe o projeto na sua IDE como um projeto Maven.
+
+3. Atualize as dependências do Maven (`pom.xml`).
+
+4. Execute a classe `Main.java` localizada no pacote `br.com.fiap.view`.
+
+<br>
+
+
 ## ⚙️ Configuração do Banco de Dados
 
 ---
@@ -73,21 +92,74 @@ Para executar o projeto, certifique-se de configurar as credenciais do seu banco
 <br>
 
 
-## 🛠️ Como Executar
+## 🎓 Demonstração
+
+---
+Abaixo há os prints das telas do terminal e do banco de dados mostrando o resultado da execução do CRUD. <br>
+Saída no terminal para criação do banco.
+
+<img src="./prints/comprovacao-criacao-banco-via-hibernate.png" alt="comprovacao-criacao-banco-via-hibernate"/><br/>
+
+
+Estado inicial do banco
+
+<img src="./prints/estado-inicial-banco.png" alt="estado-inicial-banco"/><br/>
+
+<br>
+
+
+### Incerir informações no banco: INSERT
 
 ---
 
-1. Clone o repositório:
+Saida no terminal após inserir as informações.
 
-```Bash
-git clone https://github.com/NathanaelV/S02CP01-Java.git
-```
+<img src="./prints/print-insert-dos-funcionarios-programa.png" alt="print-insert-dos-funcionarios-programa"/><br/>
 
-2. Importe o projeto na sua IDE como um projeto Maven.
+Banco após inserção.
 
-3. Atualize as dependências do Maven (`pom.xml`).
+<img src="./prints/print-insert-dos-funcionarios-banco.png" alt="print-insert-dos-funcionarios-banco"/><br/>
 
-4. Execute a classe `Main.java` localizada no pacote `br.com.fiap.view`.
+<br>
+
+
+### Selecionar: SELECT
+
+---
+
+Saída no terminal após selecionar um funcionário.
+
+<img src="./prints/print-select-do-funcionario-programa.png" alt="print-select-do-funcionario-programa"/><br/>
+
+<br>
+
+
+### Atualizar informações: UPDATE
+
+---
+
+Atualizar o vigia noturno de ID_FUNCIONARIO 6 de `João Bobo` para `Marcelo Vagner`.
+
+Terminal.
+
+<img src="./prints/print-update-vigia-noturno-programa.png" alt="print-update-vigia-noturno-programa"/><br/>
+
+Banco de Dados, pré-update.
+
+<img src="./prints/print-preupdate-vigia-banco.png" alt="print-preupdate-vigia-banco"/><br/>
+
+Banco de Dados, pós-update.
+
+<img src="./prints/print-posupdate-vigia-banco.png" alt="print-posupdate-vigia-banco"/><br/>
+
+<br>
+
+
+### Deletar informações: DELETE
+
+---
+
+<img src="./prints/print-delete-funcionario-programa-com-exception.png" alt="print-delete-funcionario-programa-com-exception"/><br/>
 
 <br>
 
