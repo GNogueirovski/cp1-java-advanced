@@ -65,7 +65,7 @@ A organização dos pacotes segue as melhores práticas de separação de respon
 
 O projeto utiliza a estratégia **Single Table Inheritance** do JPA: todas as subclasses (`FuncionarioSenior` e `VigiaNoturno`) são armazenadas na mesma tabela `TB_FUNCIONARIO` da entidade pai `Funcionario`.
 
-```
+---
 
 ## 🛠️ Como Executar
 
