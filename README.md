@@ -31,7 +31,7 @@ teste-cp1
 ## 🚀 Tecnologias Utilizadas
 
 ---
-* **Java JDK:** 21 ou superior
+* **Java JDK:** 21
 * **Framework de Persistência:** JPA / Hibernate
 * **Gerenciador de Dependências:** Maven
 * **Banco de Dados:** Oracle Database
@@ -115,7 +115,7 @@ Estado inicial do banco
 <br>
 
 
-### Incerir informações no banco: INSERT
+### Inserir informações no banco: INSERT
 
 ---
 
