@@ -17,6 +17,10 @@ teste-cp1
 │   │   ├── annotations  # Anotações customizadas para o projeto
 │   │   ├── dao          # Interfaces e Implementações do padrão Data Access Object
 │   │   ├── entity       # Classes de domínio que representam as tabelas do banco
+|   |   ├──────────      # `Funcionario` — entidade base, mapeada para a tabela `TB_FUNCIONARIO`.
+|   |   ├──────────      # `FuncionarioSenior` — estende `Funcionario`; calcula bônus de 5% a cada 15h trabalhadas.
+|   |   ├──────────      # `VigiaNoturno` — estende `Funcionario`; possui campo adicional `adicional_noturno` e cálculo de salário com adicional percentual.
+
 │   │   ├── exception    # Exceções personalizadas (erros de commit, ID não encontrado)
 │   │   └── view         # Classe principal (Main) para execução do sistema
 │   └── resources/META-INF
@@ -55,6 +59,13 @@ A organização dos pacotes segue as melhores práticas de separação de respon
 
 <br>
 
+## 🧬 Herança de Entidades
+
+---
+
+O projeto utiliza a estratégia **Single Table Inheritance** do JPA: todas as subclasses (`FuncionarioSenior` e `VigiaNoturno`) são armazenadas na mesma tabela `TB_FUNCIONARIO` da entidade pai `Funcionario`.
+
+```
 
 ## 🛠️ Como Executar
 
